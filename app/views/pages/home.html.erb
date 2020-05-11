@@ -1,0 +1,19 @@
+<h1>This is the Home page</h1>
+<!-- get '/', to: "pages#home" -->
+<form action="/" method="get">
+  <input type="text" name="member" value="<%= params[:member]%>" placeholder="Who are you looking for?">
+  <input type="text" name="city" placeholder="Which city are they in?">
+  <input type="submit">
+</form>
+<ol>
+  <h4>
+    You searched for <%= @member%>
+  </h4>
+  <% @members.each do |member| %>
+    <li>
+      <%= member %>
+    </li>
+  <% end %>
+</ol>
+<p><a href="/about/">About</a></p>
+<!-- link_to "What you click on", rails_prefix_path -->
